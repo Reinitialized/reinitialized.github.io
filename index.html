@@ -1,0 +1,56 @@
+<h1 id="about-me">About me</h1>
+<p>I am a hobbyist Generalized System Administrator who has built a 3 node hyper-converged cluster using 12th gen Dell PowerEdge R720s within a homelab/homeprod environment. Each node runs Proxmox 7 with Ceph for scalable compute and storage resources, all backed by dual 10Gb SPF+ multi-mode standard DACs running in LACP round-robin for high availability and improved traffic throughput. These servers are connected to a Brocade ICX6610 switch, which handles 802.1p prioritized intra-VLAN traffic to minimize latency, followed with dual 40Gbps QSFP+ multi-mode standard DACs in LACP round-robin uplinked to my main router. The router consists of a Optiplex 7050 running OPNsense, which handles all inter-VLAN communications and network firewall to lock down and protect the environment. Wireless Access Points are UniFi 6 Lites managed by a UniFi Controller hosted in a LXC container. I have been developing this setup since mid 2018 to learn about hardware and software management.</p>
+<p>Within this environment, I run the following VMs/Containers:</p>
+<ul>
+<li>dc1.core.in.reinitialized.net:<ul>
+<li>Windows Server 2022 Datacenter Core in KVM</li>
+<li>Roles/AD DS Forest Level 2016</li>
+<li>Roles/DNS</li>
+<li>Roles/File and Storage Services</li>
+<li>Primary Domain Controller, used for authentication, DNS, and managing Windows 10 client machines with GPOs</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>dc2.core.in.reinitialized.net:<ul>
+<li>Windows Server 2022 Datacenter Core in KVM</li>
+<li>Roles/AD DS Forest Level 2016</li>
+<li>Roles/DNS</li>
+<li>Roles/File and Storage Services</li>
+<li>Secondary Domain Controller, see dc1</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>fs1.core.in.reinitialized.net:<ul>
+<li>Windows Server 2022 Datacenter Core in KVM</li>
+<li>Roles/File and Storage Services</li>
+<li>Used for network shares and storing data of redirected profiles, allowing for simplified data management and backup</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>agent.reinitialized.net:<ul>
+<li>Debian 10 in LXC</li>
+<li>Runs TacticalRMM (a free open source bare bones RMM with basic patch management and Take Control)</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>unifi.in.reinitialized.net:<ul>
+<li>Debian 10 in LXC</li>
+<li>UniFi controller for managing WAPs</li>
+</ul>
+</li>
+</ul>
+<p>Active Directory is used to manage all Windows based machines within my environment and provide centralized authentication where possible. Beyond this, I preference running RHEL deprived Linux Distros where supported followed with Debian if not. My ultimate goal with this setup is to define everything as Infrastructure as Code, allowing me to fully redeploy, update systems and configuration, and add additional services all with a single command, reducing potential human bias and version controlling my setup in case of needing to rollback. All of this is backed up using Proxmox Backup Server, which is then pushed to Wasabi S3 using Duplicati.</p>
+<h2 id="active-projects">Active Projects:</h2>
+<ul>
+<li><a href="https://bleupigs.club">Bleu Pigs</a></li>
+</ul>
+<h2 id="verified-socials">Verified Socials:</h2>
+<ul>
+<li><a href="https://twitter.com/ReinitiaIized">Twitter</a></li>
+<li><a href="https://www.roblox.com/users/189503/profile">Roblox</a></li>
+<li>Discord: Reinitialized#5465</li>
+</ul>
