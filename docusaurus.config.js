@@ -9,16 +9,12 @@ const config = {
   favicon: 'img/favicon.ico',
   url: `https://${organizationName}.github.io`,
   baseUrl: `/${projectName}/`,
-
-  organizationName,
-  projectName,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
   },
-
   presets: [
     [
       'classic',
@@ -36,7 +32,6 @@ const config = {
       }),
     ],
   ],
-
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -57,7 +52,7 @@ const config = {
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: `https://github.com/${organizationName}/${projectName}`,
             label: 'GitHub',
             position: 'right',
           },
@@ -113,6 +108,8 @@ const config = {
         darkTheme: prismThemes.dracula,
       },
     }),
+  organizationName,
+  projectName,
 };
 
 export default config;
