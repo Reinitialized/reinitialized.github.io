@@ -8,7 +8,7 @@ const config = {
   tagline: 'Delve into my insanity',
   favicon: 'img/favicon.ico',
   url: `https://${organizationName}.github.io`,
-  baseUrl: `/${projectName}/`,
+  baseUrl: `/`,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   i18n: {
